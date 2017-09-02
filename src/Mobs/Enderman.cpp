@@ -194,7 +194,7 @@ void cEnderman::Tick(std::chrono::milliseconds a_Dt, cChunk & a_Chunk)
 	}
 
 	// Take damage when touching water, drowning damage seems to be most appropriate
-	if (CheckRain() || IsSwimming())
+	if (CheckRain() || IsInWater())
 	{
 		EventLosePlayer();
 		TakeDamage(dtDrowning, nullptr, 1, 0);
@@ -224,7 +224,3 @@ bool cEnderman::CheckRain(void)
 	}
 	return true;
 }
-
-
-
-
