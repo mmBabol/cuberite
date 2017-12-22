@@ -1233,7 +1233,7 @@ void cEntity::TickBurning(cChunk & a_Chunk)
 		m_TicksSinceLastFireDamage++;
 		if (m_TicksSinceLastFireDamage >= FIRE_TICKS_PER_DAMAGE)
 		{
-			if (!IsFireproof() && !HasLava)
+			if (!IsFireproof() && !IsInLava())
 			{
 				TakeDamage(dtFireContact, nullptr, FIRE_DAMAGE, 0);
 			}
