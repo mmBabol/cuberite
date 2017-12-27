@@ -18,6 +18,19 @@ public:
 	}
 
 
+
+	virtual short GetDurabilityLossByAction(eDurabilityLostAction a_Action)
+	{
+		switch (a_Action)
+		{
+			case dlaAttackEntity: return 2;
+			case dlaBreakBlock:   return 1;
+			default:              return 0;
+		}
+	}
+
+
+
 	virtual float GetBlockBreakingStrength(BLOCKTYPE a_Block)
 	{
 		if (!IsBlockMaterialWood(a_Block) && !IsBlockMaterialPlants(a_Block) && !IsBlockMaterialVine(a_Block))
@@ -40,7 +53,3 @@ public:
 	}
 
 } ;
-
-
-
-
