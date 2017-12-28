@@ -2347,7 +2347,7 @@ void cPlayer::UseEquippedItem(cItemHandler::eDurabilityLostAction a_Action)
 	// If the item has an unbreaking enchantment, give it a chance of escaping damage:
 	// Ref: https://minecraft.gamepedia.com/Enchanting#Unbreaking
 	int UnbreakingLevel = static_cast<int>(Item.m_Enchantments.GetLevel(cEnchantments::enchUnbreaking));
-	int chance = 1 - (1.0 / (UnbreakingLevel + 1));
+	double chance = 1 - (1.0 / (UnbreakingLevel + 1));
 	if (GetRandomProvider().RandBool(chance))
 	{
 		return;
